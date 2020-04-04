@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="moneyDisplay"> Money = 0 </h1>
+  <h2> Stock 1 </h2>
+  <h3 id="stock1Price"> </h3>
+</body>
+<script>
+  var money = 0;
+  var stock1Price = 5;
+  var priceChangeTime = 5000;
+  function refresh() {
+    document.getElementById("moneyDisplay").innerHTML = "Money = $" + money;
+    document.getElementById("stock1Price").innerHTML = "$" + stock1Price;
+	}
+  function changePrice() {
+  A = Math.floor(Math.random() * 2) + 1;
+    if (A === 2) {
+      stock1Change = Math.floor(Math.random() * 5) + 1;
+      } else if (A === 1){
+  stock1Change = Math.floor(Math.random() * 5) + 1;
+  stock1Change = stock1Change*-1
+}
+  alert(stock1Change);
+  stock1Price = stock1Price+stock1Change;
+  refresh();
+  window.setTimeout(changePrice, priceChangeTime);
+}
+  changePrice();
+</script>
+</html>
